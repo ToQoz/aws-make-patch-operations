@@ -1,0 +1,29 @@
+{
+  "name": "aws-make-patch-operations",
+  "description": "makes patchOperations from 2 objects",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js",
+    "version": "node -e 'console.log(require(\"./package.json\").version)'",
+    "release:bump": "conventional-recommended-bump -p angular",
+    "release:build-changelog": "conventional-changelog -p angular -i CHANGELOG.md -w",
+    "release:github": "conventional-github-releaser -p angular"
+  },
+  "dependencies": {
+    "traverse": "^0.6.6"
+  },
+  "devDependencies": {
+    "conventional-changelog": "^0.5.3",
+    "conventional-github-releaser": "^0.5.3",
+    "conventional-recommended-bump": "0.0.3",
+    "tape": "^4.4.0"
+  },
+  "homepage": "https://github.com/ToQoz/make-patch-operations",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ToQoz/make-patch-operations.git"
+  },
+  "author": "Takatoshi Matsumoto",
+  "license": "MIT"
+}
