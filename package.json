@@ -1,7 +1,7 @@
 {
   "name": "aws-make-patch-operations",
   "description": "makes patchOperations from 2 objects",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js",
