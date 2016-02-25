@@ -1,3 +1,4 @@
+var pointer = require('json-pointer');
 var traverse = require('traverse');
 
 module.exports = function(oldObj, newObj) {
@@ -42,7 +43,7 @@ function kv(obj) {
   return traverse(obj).reduce(function(acc, v) {
     if (this.isLeaf) {
       if (!Array.isArray(v) && !isObject(v)) { // ignore empty array and object
-        var path = "/" + this.path.join("/");
+        var path = pointer.compile(this.path);
         acc[path] = v;
       }
     }

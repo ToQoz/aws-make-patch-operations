@@ -55,3 +55,12 @@ test('nop', function(t) {
   var operations = makePatchOperations({a: {_a: '_x'}, b: 2}, {a: {_a: '_x'}, b: 2})
   t.deepEqual(operations, []);
 });
+
+test('escape /', function(t) {
+  t.plan(1);
+
+  var operations = makePatchOperations({'a/b': 'c'}, {'a/b': '_c'})
+  t.deepEqual(operations, [
+    {path: '/a~1b', op: 'replace', value: '_c'},
+  ]);
+});
